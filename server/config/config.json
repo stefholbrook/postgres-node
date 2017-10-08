@@ -10,16 +10,9 @@
   "test": {
     "username": "root",
     "password": null,
-    "database": "todos-dev",
+    "database": "todos-test",
     "host": "127.0.0.1",
     "start": 5432,
-    "dialect": "postgres"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
     "dialect": "postgres"
   }
 }

@@ -1,4 +1,3 @@
-'use strict';
 module.exports = (sequelize, DataTypes) => {
   const TodoItem = sequelize.define('TodoItem', {
     content: {
@@ -9,17 +8,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       defaultValue: false
     }
+  }, {
+    classMethods: {
+      associate: (models) => {
+        TodoItem.belongsTo(models.Todo, {
+          foreignKey: 'todoId',
+          onDelete: 'CASCADE'
+        })
+      }
+    }
   })
-
-  TodoItem.associate = (models) => {
-    // define the relationship between the TodoItems and the Todo objects
-    TodoItem.belongsTo(models.Todo, {
-      foreignKey: 'todoId',
-      // tells Postgres that if we delete a todo, it's associated todo items
-      // should be deleted as well
-      onDelete: 'CASCADE'
-    })
-  }
-
   return TodoItem
 }

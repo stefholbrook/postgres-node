@@ -9,5 +9,5 @@ module.exports = {
       })
       .then(todoItem => res.status(201).send(todoItem))
       .catch(error => res.status(400).send(error));
-  },
+  }
 }

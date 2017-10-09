@@ -1,4 +1,3 @@
-'use strict';
 module.exports = {
   // When we run these migrations, the up function will be executed. It will
   // take care of creating the table and it's associated columns for us
